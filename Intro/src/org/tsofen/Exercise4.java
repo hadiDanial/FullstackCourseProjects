@@ -14,5 +14,12 @@ public class Exercise4 {
 				System.out.println(num + " is even!");
 			i++;
 		}
+		
+		for(int j = 0; j < 10; i++)
+		{
+			num  = s.nextInt();
+			if(num % 2 == 0)
+				System.out.println(num + " is even!");
+		}
 	}
 }

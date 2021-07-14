@@ -1,12 +1,12 @@
-package Polymorphysm;
+package polymorphism;
 
-public abstract class Sportsman 
+public abstract class Athlete 
 {
 	private String firstName, lastName;
 	private String role;
 	private String group;
 	
-	public Sportsman(String firstName, String lastName, String role, String group) 
+	public Athlete(String firstName, String lastName, String role, String group) 
 	{
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -33,12 +33,12 @@ public abstract class Sportsman
 	{
 		System.out.println(toString());
 	}
-	protected abstract String getSportsmanDetails();
-
+	protected abstract String getAthleteDetails();
+	protected abstract String getSportName();
 	@Override
 	public String toString() 
 	{
-		return "Hey, I'm " + getName() + ", I play "
-				+ group + " in the " + role + " position. " + getSportsmanDetails();
+		return "Hey, I'm " + getName() + ", I play " + getSportName() + " with "
+				+ group + " in the " + role + " position. " + getAthleteDetails();
 	}
 }

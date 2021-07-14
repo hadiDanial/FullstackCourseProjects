@@ -1,12 +1,12 @@
-package Polymorphysm;
+package polymorphism;
 
-public class SoccerPlayer extends Sportsman 
+public class SoccerPlayer extends Athlete 
 {
 	private int goals;
 	
-	public SoccerPlayer(String firstName, String lastName, String role, int goals)
+	public SoccerPlayer(String firstName, String lastName, String role, String team, int goals)
 	{
-		super(firstName, lastName, role, "Soccer");
+		super(firstName, lastName, role, team);
 		this.goals = goals;
 	}
 	
@@ -16,9 +16,16 @@ public class SoccerPlayer extends Sportsman
 	}
 
 	@Override
-	protected String getSportsmanDetails() 
+	protected String getAthleteDetails() 
 	{
 		return "I scored " + goals + " goals! ";
+	}
+	
+
+	@Override
+	protected String getSportName() 
+	{
+		return "Soccer";
 	}
 
 }

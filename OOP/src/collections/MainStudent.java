@@ -20,6 +20,7 @@ public class MainStudent
 		System.out.println("Comparing by name and grades together:\n" + list);
 		
 		// Name
+		list = Arrays.asList(arr);
 		Collections.sort(list, new Comparator<Student>()
 		{
 			@Override
@@ -29,8 +30,8 @@ public class MainStudent
 			}
 		});
 		System.out.println("Comparing by name:\n" + list);
-		
 		// Grade
+		list = Arrays.asList(arr);
 		Collections.sort(list, new Comparator<Student>()
 		{
 			@Override

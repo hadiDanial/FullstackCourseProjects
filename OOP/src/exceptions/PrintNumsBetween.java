@@ -8,6 +8,11 @@ public class PrintNumsBetween
 
 	public static void main(String[] args)
 	{
+		printNums();
+	}
+
+	private static void printNums()
+	{
 		Scanner s = new Scanner(System.in);
 		int a, b;
 		boolean done = false;
@@ -30,6 +35,7 @@ public class PrintNumsBetween
 				done = true;
 			}
 		}
+		s.close();
 	}
 
 	private static void printNumsBetween(int a, int b)

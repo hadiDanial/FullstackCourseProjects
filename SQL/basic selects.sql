@@ -6,8 +6,20 @@ insert into products(barcode, name, price, description) values (5, 'Cake', 50, '
 insert into products(barcode, name, price, description) values (6, 'Chocolate bar', 3, 'Tasty');
 
 
+insert into products(name, price, description) values ('Bread', 1, 'A piece of bread.');
+insert into products(name, price, description) values ('Apple', 10, 'An apple!');
+insert into products(name, price, description) values ('Cola', 20, 'A bottle of cola');
+insert into products(name, price, description) values ('iPhone', 3500, 'An iPhone. How expensive...');
+insert into products(name, price, description) values ('Cake', 50, 'Yummy!');
+insert into products(name, price, description) values ('Chocolate bar', 3, 'Tasty');
+
+
+
+
 Select * from products;
 
 Select * from products where price > 10;
 
 Select * from products where barcode = 2;
+
+delete from products;

@@ -10,15 +10,22 @@ public class Program
 		try
 		{
 			DBConnection db = new DBConnection();
-			for (int i = 0; i < 10; i++)
-			{
-				db.runSQL();			
-			}
-		} catch (ClassNotFoundException e)
+//			for (int i = 0; i < 10; i++)
+//			{
+//				db.runSQL();			
+//			}
+
+			db.createProductsTable();
+			db.insertSampleProducts();
+			db.readAll();
+//			db.dropProductsTable();
+		} 
+		catch (ClassNotFoundException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (SQLException e)
+		} 
+		catch (SQLException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();

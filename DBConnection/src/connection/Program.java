@@ -10,6 +10,10 @@ public class Program
 		try
 		{
 			DBConnection db = new DBConnection();
+			for (int i = 0; i < 10; i++)
+			{
+				db.runSQL();			
+			}
 		} catch (ClassNotFoundException e)
 		{
 			// TODO Auto-generated catch block

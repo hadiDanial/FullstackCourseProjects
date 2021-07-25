@@ -25,3 +25,5 @@ create table PCs(
 insert into Products (name, price, description) values ('Apple', 2, 'Keeps the doctor away.');
 insert into PCs (ram, manufacturer) values (16, 'Lenovo');
 insert into Students (age, name, pc_id) values (24, 'Hadi', 1);
+
+select count(*) from Students;

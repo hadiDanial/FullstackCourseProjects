@@ -1,5 +1,3 @@
-package connection;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,8 +8,9 @@ import java.sql.Statement;
 public class DBConnection
 {
 	private static DBConnection instance;
+
 	private static String driverClass = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-	private static String connectioniString = "jdbc:sqlserver://localhost;databaseName=TsofenDB;integratedSecurity=true;";
+	private static String connectioniString = "jdbc:sqlserver://127.0.0.1:1433;databaseName=TsofenDB;integratedSecurity=true";
 	private Connection connection;
 
 	private DBConnection() throws ClassNotFoundException, SQLException
@@ -29,12 +28,13 @@ public class DBConnection
 
 	public static DBConnection getInstance() throws ClassNotFoundException, SQLException
 	{
-		if(instance == null)
+		if (instance == null)
 		{
 			instance = new DBConnection();
 		}
 		return instance;
 	}
+
 	public int runInsertSQL(String sql) throws SQLException
 	{
 		System.out.println("Executing " + sql);

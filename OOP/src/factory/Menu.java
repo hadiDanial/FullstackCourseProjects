@@ -7,21 +7,37 @@ public abstract class Menu
 {
 	private List<String> options;	
 	protected static String exitOption = "Exit";
+	
+	protected static Option exit = new Option("Exit", new Action()
+	{
+		@Override
+		public void performAction()
+		{
+			System.exit(0);			
+		}
+	});
+	
 	public Menu(List<String> options)
 	{
 		super();
 		this.options = options;
 	}
 
-	public void printOptions()
+	public void start()
+	{
+		printOptions();
+		select();
+	}
+
+	private void printOptions()
 	{
 		for(int i = 0; i < options.size(); i++)
 		{
 			System.out.println((i + 1) + ". " + options.get(i));
-		}
+		}	
 	}
 	
-	public void select()
+	private void select()
 	{
 		Scanner s = new Scanner(System.in);
 		int result = s.nextInt();

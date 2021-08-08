@@ -43,6 +43,11 @@ public class PersonController
 	{
 		return personBL.getPerson(name);
 	}
+	
+	/**
+	 * 
+	 * @return
+	 */
 	@GetMapping("getAll")
 	public Iterable<Person> getAll()
 	{

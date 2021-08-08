@@ -12,7 +12,7 @@ public class PersonBL
 {
 	@Autowired
 	PersonRepository repo;
-	public void addPerson(Person p)
+	public boolean addPerson(Person p)
 	{
 		// Check if person with this name already exists
 		List<Person> person = repo.findAllByName(p.getName());
@@ -21,6 +21,16 @@ public class PersonBL
 		if(person.size() == 0)
 		{
 			repo.save(p);
+			return true;
 		}
+		return false;
+	}
+	public List<Person> getPerson(String name)
+	{
+		return repo.findAllByName(name);
+	}
+	public Iterable<Person> getAllPersons()
+	{
+		return repo.findAll();
 	}
 }

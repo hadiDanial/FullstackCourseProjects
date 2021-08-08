@@ -1,9 +1,14 @@
 package org.tsofen.MyFirstSpringBootDataProject.beans;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,17 +24,19 @@ public class Person
 	private int footSize;
 	private float height;
 	private float weight;
+	
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "planet_id") // Foreign Key Name
+	private Planet planet;
 
 	public Person()
 	{
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Person(int id, String name, int age, int footSize, float height, float weight)
+	public Person(String name, int age, int footSize, float height, float weight)
 	{
 		super();
-		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.footSize = footSize;

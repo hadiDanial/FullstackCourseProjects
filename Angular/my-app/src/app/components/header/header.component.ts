@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  public currentDate = new Date();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  sayHi(data : any): void{
+    alert("Hi! " + data);
+  }
 }

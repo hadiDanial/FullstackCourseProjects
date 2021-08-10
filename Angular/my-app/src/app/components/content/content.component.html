@@ -1,1 +1,27 @@
-<p>content works!</p>
+<div style="text-align:center">
+    <div *ngIf="currentDiscount>0">
+        <h3 [ngClass]="{'hotSale':currentDiscount>20}">Welcome to our store, We have {{currentDiscount}}% discount on
+            all
+            products,
+            Valid from {{currentDate | date:'dd/MM/yyyy'}}</h3>
+    </div>
+    <app-text-and-button buttonText="Start" labelText="Search in website"></app-text-and-button>
+    <div style="position:absolute;">
+        <button (click)="changeWidth(10)">+</button>
+        <button (click)="resetWidth()">X</button>
+        <button (click)="changeWidth(-10)">-</button>
+        <input type="range" min="100" max="700" [(ngModel)]="imageWidth" />
+    </div>
+
+    <img [src]="imagePath" [width]="imageWidth" />
+    <br />
+    <button (click)="doSomething()">Say something</button>
+    <br />
+    <button (click)="sayHi('Rawi')">Say hi</button>
+    <br />
+    <button (click)="doMagic()">Do magic</button>
+    <br />
+    <button (click)="changeDiscount(-1)">Descrease discount</button>
+
+    {{currentDiscount}}
+</div>

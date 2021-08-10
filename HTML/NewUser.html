@@ -5,85 +5,131 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Add User</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/addUserCSS.css">
     <script src="addUsers.js"></script>
 </head>
-<nav class="topnav">
-    <div>
-        <a href="">Admin</a>
-        <a href="">Dashboard</a>
-        <a class="active" href="">Access</a>
-        <a href="">SmartEngine</a>
-        <a href="">Help</a>
-    </div>
-</nav>
 
 <body>
+    <header style="width:100%;">
+
+        <nav class="topnav">
+            <div>
+                <a href="">Admin</a>
+                <a href="">Dashboard</a>
+                <a class="active" href="">Access</a>
+                <a href="">SmartEngine</a>
+                <a href="">Help</a>
+            </div>
+        </nav>
+    </header>
     <br>
-    <h1>Access - New User / Update User</h1>
-    <h2>Personal Info</h2>
-
     <form class="infoDiv" action="http://localhost:8081/User/addUser">
-        <div>
-            <label class="label" for="name">Name</label>
-            <input class="input" type="text" name="name" id="name">
-        </div>
-        <br>
-        <div>
-            <label class="label" for="email">E-mail</label>
-            <input class="input" type="email" name="email" id="email">
-            <br>
-            <br>
-            <label for="name">This will be used as username</label>
-        </div>
-        <br>
-        <div>
-            <label class="label" for="phone">Phone</label>
-            <input class="input" type="number" name="phone" id="phone">
-        </div>
-        <br>
-        <div>
-            <label class="label" for="password">Password</label>
-            <input class="input" type="password" name="password" id="password">
-            <br>
-            <br>
-            <label for="name">Must be at least 6 letter</label>
-        </div>
-        <br>
-        <div>
-            <label class="label" for="Active">Active</label>
-            <label class="switch">
-                <input onclick="toggleActivityStatus()" type="checkbox" name="active" id="active">
-                <span class="slider round"></span>
-            </label>
-            <label id="activityStatus" style="float: right" for="active">Inactive</label>
-        </div>
-        <br>
-        <div>
-            <label class="label" for="Product Groups">Product Groups</label>
-            <select class="input" name="productGroups" id="productGroups">
-                <option value="PowerStore">PowerStore</option>
-                <option value="PowerFlex">PowerFlex</option>
-                <option value="PowerMax">PowerMax</option>
-            </select>
-        </div>
-        <br>
-        <div>
-            <label class="label" for="Roles">Roles</label>
-            <select class="input" name="role" id="role" >
-                <option value="Admin">Admin</option>
-                <option value="User">User</option>
-                <option value="Server">Tester</option>
-            </select>
-        </div>
-        <br>
+        <h1 style="text-align:center">Access - New User / Update User</h1>
+        <h2>Personal Info</h2>
+        <table>
+            <colgroup>
+                <col span="1" style=width:30%>
+                <col span="1" style=width:70%>
+            </colgroup>
+            <tbody>
 
-        <button type="submit">Save</button>
-        <button type="reset">Cancel</button>
-    </form>
+                <tr>
+                    <td >
+                        <label for="name">Name</label>
+                    </td>
+                    <td class="table-input">
+                        <input type="text" name="name" id="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">E-mail</label>
+                    </td>
+                    <td>
+                        <input type="email" name="email" id="email">
+                </td>
+            </tr>
+            <tr colspan="2">
+                <td>
+                    <label class="note" for="name">This will be used as username</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="phone">Phone</label>
+                </td>
+                <td>
+                    <input type="number" name="phone" id="phone">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password">Password</label>
+                </td>
+                <td>
+                    <input type="password" name="password" id="password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="note" for="name">Must be at least 6 letters</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Active">Active</label>
+                </td>
+                <td>
+                    
+                    <div style="width:50%">
+                        <label class="switch">
+                            <input onclick="toggleActivityStatus()" type="checkbox" name="active" id="active">
+                            <span class="slider round"></span>
+                        </label>
+                        <label style="vertical-align:middle;" id="activityStatus" style="float: right" for="active">Inactive</label>
+                    </div>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="label" for="Product Groups">Product Groups</label>
+                </td>
+                <td>
+                    <select class="input" name="productGroups" id="productGroups">
+                        <option value="PowerStore">PowerStore</option>
+                        <option value="PowerFlex">PowerFlex</option>
+                        <option value="PowerMax">PowerMax</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="label" for="Roles">Roles</label>
+                </td>
+                <td>
+                    <select class="input" name="role" id="role">
+                        <option value="1">Admin</option>
+                        <option value="2">User</option>
+                        <option value="3">Configurator</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    
+    <div>
+    </div>
+    <br>
+    
+    <button type="submit">Save</button>
+    <button type="reset">Cancel</button>
+</form>
 </body>
 
 </html>

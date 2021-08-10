@@ -7,7 +7,7 @@ import org.tsofen.AddUser.beans.User;
 
 public interface UserRepository extends CrudRepository<User, Integer>
 {
-	public List<User> findAllByName(String name);
-	public List<User> findAllByEmail(String email);
+	public User findByName(String name);
+	public User findByEmail(String email);
 	
 }

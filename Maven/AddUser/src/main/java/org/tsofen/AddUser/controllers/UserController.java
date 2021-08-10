@@ -16,9 +16,10 @@ public class UserController
 	UserBL userBL;
 	
 	@GetMapping("addUser")
-	public void addUser(String name, String email, int phone, String password, boolean active, String productGroups, Role role)
+	public String addUser(String name, String email, int phone, String password, boolean active, String productGroups, int role)
 	{
-		User user = new User(name, email, phone, password, active, productGroups, role);
-		userBL.addUser(user);
+		Role r = Role.getByValue(role);
+		User user = new User(name, email, phone, password, active, productGroups, r);
+		return userBL.updateUser(user);
 	}
 }

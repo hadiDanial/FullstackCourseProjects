@@ -13,19 +13,22 @@ public class UserBL
 	@Autowired
 	UserRepository userRepo;
 	
-	public void updateUser(User user)
+	public String updateUser(User user)
 	{
-		List<User> users = userRepo.findAllByName(user.getName());
-		if(users.size() == 0)
+		String returnString = ""; 
+		User userToFind = userRepo.findByEmail(user.getEmail());
+		if(userToFind == null)
 		{
 			addUser(user);
+			returnString = "Added new user:<br>" + user.toString();
 		}
-		else if(users.size()==1)
+		else
 		{
-			User toUpdate = users.get(0);
-			toUpdate.updateUser(user);
-			userRepo.save(toUpdate);
+			returnString = "Updated user:<br>" + userToFind.toString() + "<br>To:<br>" + user.toString();
+			userToFind.updateUser(user);
+			userRepo.save(userToFind);
 		}
+		return returnString;
 	}
 	
 	public void addUser(User user)

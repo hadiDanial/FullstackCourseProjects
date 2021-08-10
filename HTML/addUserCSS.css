@@ -1,9 +1,14 @@
 html
 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 auto;
+    padding: 0;
 }
 .topnav{
     width: 100%;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 .topnav a {
     float: left;
@@ -16,7 +21,7 @@ html
 }
 
 .topnav a:hover {
-    background-color: rgb(221, 221, 221);
+    background-color: #6bcfab;
     color: black;
 }
 

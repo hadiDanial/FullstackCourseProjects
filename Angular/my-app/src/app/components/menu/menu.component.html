@@ -1,5 +1,12 @@
-<div style="height: 100%;">
-    About<br>
-    Products<br>
-    Contact Us<br>
+<div style="background-color: coral; height: 700px; padding:10px;">
+    <a routerLink="/home" routerLinkActive="active-link">Home</a> <br />
+    <a routerLink="/about" routerLinkActive="active-link">About</a> <br />
+    <a routerLink="/products" routerLinkActive="active-link">Products</a>
+    :
+    <ul>
+        <li *ngFor="let product of products">
+            {{product}} </li>
+    </ul>
+    <br />
+    <a routerLink="/contactUs" routerLinkActive="active-link">Contact us</a> <br />
 </div>

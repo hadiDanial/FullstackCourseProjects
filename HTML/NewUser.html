@@ -41,7 +41,7 @@
                         <label for="name">Name</label>
                     </td>
                     <td class="table-input">
-                        <input type="text" name="name" id="name">
+                        <input required type="text" name="name" id="name">
                     </td>
                 </tr>
                 <tr>
@@ -49,7 +49,7 @@
                         <label for="email">E-mail</label>
                     </td>
                     <td>
-                        <input type="email" name="email" id="email">
+                        <input required type="email" name="email" id="email">
                 </td>
             </tr>
             <tr colspan="2">
@@ -70,7 +70,7 @@
                     <label for="password">Password</label>
                 </td>
                 <td>
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="password" id="password" required minlength="6"> <!--required pattern="[a-z]{6,20}"-->
                 </td>
             </tr>
             <tr>
@@ -112,10 +112,10 @@
                     <label class="label" for="Roles">Roles</label>
                 </td>
                 <td>
-                    <select class="input" name="role" id="role">
-                        <option value="1">Admin</option>
-                        <option value="2">User</option>
-                        <option value="3">Configurator</option>
+                    <select required class="input" name="role" id="role">
+                        <option value="Admin">Admin</option>
+                        <option value="User">User</option>
+                        <option value="Configurator">Configurator</option>
                     </select>
                 </td>
             </tr>

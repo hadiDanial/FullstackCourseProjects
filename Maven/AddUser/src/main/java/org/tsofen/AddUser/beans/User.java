@@ -2,6 +2,7 @@ package org.tsofen.AddUser.beans;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -45,6 +46,7 @@ public class User
 		setPassword(other.getPassword());
 		setActive(other.isActive());
 		setProductGroups(other.getProductGroup());
+		setRole(other.getRole());
 	}
 	
 	public String getName()

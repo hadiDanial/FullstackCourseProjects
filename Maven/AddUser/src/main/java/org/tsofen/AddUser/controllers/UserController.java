@@ -15,6 +15,18 @@ public class UserController
 	@Autowired
 	UserBL userBL;
 	
+	
+	/**
+	 * 
+	 * @param name The user's name.
+	 * @param email The user's email.
+	 * @param phone Phone number
+	 * @param password Password
+	 * @param active Is this user active?
+	 * @param productGroups The product groups this user can access
+	 * @param role The user's role (Admin, User, Configurator)
+	 * @return
+	 */
 	@GetMapping("addUser")
 	public String addUser(String name, String email, int phone, String password, boolean active, String productGroups, String role)
 	{

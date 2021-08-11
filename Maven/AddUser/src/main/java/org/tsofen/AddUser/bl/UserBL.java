@@ -13,6 +13,8 @@ public class UserBL
 	@Autowired
 	UserRepository userRepo;
 	
+	
+	// Returning a string in the business logic doesn't make sense - this return should be in the controller
 	public String updateUser(User user)
 	{
 		String returnString = ""; 

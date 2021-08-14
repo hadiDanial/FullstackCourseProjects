@@ -1,1 +1,7 @@
-<p>products works!</p>
+<div *ngFor="let product of products">
+    <app-product [product]="product">
+
+    </app-product>
+
+</div>
+<img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" alt="" *ngIf="loading">

@@ -15,6 +15,8 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ThumbnailComponent } from './components/thumbnail/thumbnail.component';
+import { ProductComponent } from './components/product/product.component';
+import { HttpClient } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,11 +30,12 @@ import { ThumbnailComponent } from './components/thumbnail/thumbnail.component';
     AboutComponent,
     ContactUsComponent,
     ProductsComponent,
-    ThumbnailComponent
+    ThumbnailComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule
+    AppRoutingModule, FormsModule, HttpClient
   ],
   providers: [],
   bootstrap: [AppComponent]
